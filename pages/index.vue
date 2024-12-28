@@ -1,64 +1,41 @@
 <template>
     <div class="container-fluid ">
         <img src="../assets/pp.png" style="width: 100%;" alt="">
-        <div class=" sambutan card p-4">
+        <div class="sambutan card p-4">
             <div class="row">
                 <div class="col-3 pt-3">
-                    <img src="../assets/kepala.png" style="width: 100%; " class="bg-primary rounded-5" alt="">
+                    <img src="../assets/kepala.png" style="width: 100%;" class="bg-primary rounded-5" alt="">
                 </div>
                 <div class="col-8 pt-3">
-                    <h4>kurniawan, s.pd,m.pd</h4>
+                    <h4>Kurniawan, S.Pd, M.Pd</h4>
                     <h4>Assalamualaikum wr.wb</h4>
-                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aut eveniet distinctio deserunt laborum dolores, quod autem doloribus ipsum voluptatem quam a asperiores libero voluptas repellendus quia! Perferendis, autem necessitatibus.</h6>
+                    <h6 class="scroll">
+                        Selamat datang di SMKN 4 Tasikmalaya. Segala puji dan syukur kita panjatkan kehadirat Allah SWT,
+                        semoga kita semua ada dalam lindungan-Nya. Dan atas perkenan-Nya pula kami dapat menghadirkan
+                        website SMK Negeri 4 Tasikmalaya ini. Kami berharap dengan adanya website di SMK Negeri 4
+                        Tasikmalaya ini para pengunjung dapat mengenal lebih jauh tentang sekolah kami sehingga dapat
+                        mempererat tali silaturrahmi antara sekolah dengan masyarakat demi kemajuan kita bersama. Tiada
+                        gading yang tak retak, website kami ini masih dalam proses pengembangan, masih banyak kekurangan
+                        yang harus kami perbaiki. Kritik dan sarannya yang membangun sangat kami harapkan untuk
+                        pengembangan ke depan.
+                        Akhirnya, saya mengucapkan terimakasih yang sebesar-besarnya kepada semua pihak yang tidak dapat
+                        disebutkan satu segala bantuan dan persatu atas fasilitasnya yang telah diberikan semoga semua
+                        yang kita lakukan bermanfaat bagi masyarakat. Wassalamu'alaikum Warahmatullahi Wabarakatuh.
+                    </h6>
                 </div>
             </div>
         </div>
+
         <div class="berita my-5 pt-5 ">
             <h3 class="m-5">BERITA ARTIKEL & INFORMASI</h3>
             <div class="scroll-container py-5">
-                <div class="card  mx-5" style="width: 20rem;">
-                    <img src="../assets/berita.jpg" class="card-img-top" alt="...">
+                <div v-for="(cover, i) in berita" :key="i" class="card  mx-5" style="width: 20rem; ">
+                    <img :src="cover.cover" class="card-img-top" style="height:10rem;" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">JUDUL 1</h5>
-                        <p class="card-text">isi kontennya</p>
+                        <h5 class="card-title">{{ cover.judul }}</h5>
+                        <p class="card-text">{{ cover.subjudul }}</p>
                     </div>
                 </div>
-                <div class="card  mx-5" style="width: 20rem;">
-                    <img src="../assets/berita.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">JUDUL 1</h5>
-                        <p class="card-text">isi kontennya</p>
-                    </div>
-                </div>
-                <div class="card  mx-5" style="width: 20rem;">
-                    <img src="../assets/berita.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">JUDUL 1</h5>
-                        <p class="card-text">isi kontennya</p>
-                    </div>
-                </div>
-                <div class="card  mx-5" style="width: 20rem;">
-                    <img src="../assets/berita.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">JUDUL 1</h5>
-                        <p class="card-text">isi kontennya</p>
-                    </div>
-                </div>
-                <div class="card  mx-5" style="width: 20rem;">
-                    <img src="../assets/berita.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">JUDUL 1</h5>
-                        <p class="card-text">isi kontennya</p>
-                    </div>
-                </div>
-                <div class="card  mx-5 " style="width: 20rem;">
-                    <img src="../assets/berita.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">JUDUL 1</h5>
-                        <p class="card-text">isi kontennya</p>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="jurusan mt-5 pt-5">
@@ -119,6 +96,10 @@
 .scroll-container::-webkit-scrollbar-track {
     background-color: #f1f1f1;
 }
+.scroll {
+    max-height: 150px;
+    overflow-y: auto; 
+}
 
 .card {
     flex: 0 0 auto;
@@ -130,7 +111,27 @@
     top: 68%;
     right: 25%;
 }
-.berita{
+
+.berita {
     background-color: #4870A4;
 }
 </style>
+<script setup>
+const supabase = useSupabaseClient()
+const berita = ref([])
+
+const getBerita = async () => {
+  const { data, error } = await supabase
+    .from('berita')
+    .select('*')
+  if (error) {
+    console.error('Error Berita:', error)
+  } else {
+    berita.value = data
+  }
+}
+
+onMounted(() => {
+  getBerita()
+})
+</script>
