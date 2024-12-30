@@ -3,7 +3,7 @@
     <div class="profile mx-2 mt-5">
     <table class="table table-bordered mt-3">
         <tr class="bg-light ">
-            <td class="py-3 text-center">Sejarah Smk Negeri 4 Tasikmalaya</td>
+            <td class="py-3 text-center bg-dark text-light">Sejarah Smk Negeri 4 Tasikmalaya</td>
         </tr>
         <tr>
             <td class="p-3">Sejalan dengan Program Pemerintah dibidang pendidikan Menengah Kejuruan pada saat itu yakni
@@ -25,7 +25,7 @@
     </table>
     <table class="table table-bordered mt-5">
         <tr class="bg-light ">
-            <td class="py-3 text-center">Visi & Misi SMK Negeri 4 Tasikmalaya</td>
+            <td class="py-3 text-center bg-dark text-light">Visi & Misi SMK Negeri 4 Tasikmalaya</td>
         </tr>
         <tr>
             <td class="p-3">
@@ -64,7 +64,7 @@
     </table>
     <table class="table table-bordered mt-5">
         <tr class="bg-light ">
-            <td class="py-3 text-center">Sejarah Smk Negeri 4 Tasikmalaya</td>
+            <td class="py-3 text-center bg-dark text-light">Sejarah Smk Negeri 4 Tasikmalaya</td>
         </tr>
         <tr>
             <td class="p-3">
@@ -75,7 +75,7 @@
     </table>
     <table class="table table-bordered mt-5">
         <tr class="bg-light ">
-            <td class="py-3 text-center">Identitas Smk Negeri 4 Tasikmalaya</td>
+            <td class="py-3 text-center bg-dark text-light">Identitas Smk Negeri 4 Tasikmalaya</td>
         </tr>
         <tr>
             <td class="p-3">

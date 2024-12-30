@@ -1,7 +1,34 @@
 <template>
-    <div class="container-fluid ">
+    <!-- <div class="container-fluid ">
         <img src="../assets/pp.png" style="width: 100%;" alt="">
-        <div class="sambutan card p-4">
+        <div class="sambutan card p-4"> -->
+            <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/pp.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/ppp.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/pppp.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="sambutan card p-4">
             <div class="row">
                 <div class="col-3 pt-3">
                     <img src="../assets/kepala.png" style="width: 100%;" class="bg-primary rounded-5" alt="">
@@ -25,7 +52,6 @@
                 </div>
             </div>
         </div>
-
         <div class="berita my-5 pt-5 ">
             <h3 class="m-5">BERITA ARTIKEL & INFORMASI</h3>
             <div class="scroll-container py-5">
@@ -73,7 +99,48 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="jurusan mt-5 pt-5">
+        <h3 class="m-5">GURU-GURU</h3>
+        <h3 class="m-5 ">TOTAL : 56</h3>
+            <div class="scroll-container">
+                <div class="card  mx-5" style="width: 20rem;">
+                    <img src="../assets/guru.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NAMA GURU</h5>
+                    </div>
+                </div>
+                <div class="card  mx-5" style="width: 20rem;">
+                    <img src="../assets/guru.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> NAMA GURU</h5>
+                    </div>
+                </div>
+                <div class="card  mx-5" style="width: 20rem;">
+                    <img src="../assets/guru.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NAMA GURU</h5>
+                    </div>
+                </div>
+                <div class="card  mx-5" style="width: 20rem;">
+                    <img src="../assets/guru.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NAMA GURU</h5>
+                    </div>
+                </div>
+                <div class="card  mx-5" style="width: 20rem;">
+                    <img src="../assets/guru.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NAMA GURU</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stat text-center bg-dark text-light">
+            <div>
+                <h1>siswa</h1>
+                <h2>15000</h2>
+            </div>
+        </div>
 </template>
 <style>
 .scroll-container {
