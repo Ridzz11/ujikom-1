@@ -16,6 +16,7 @@
 <script setup>
 const supabase = useSupabaseClient()
 const berita = ref([])
+useHead({ title: "Galery" })
 
 const getBerita = async () => {
     const { data, error } = await supabase

@@ -184,6 +184,7 @@
 }
 </style>
 <script setup>
+useHead({ title: "Home" })
 const supabase = useSupabaseClient()
 const berita = ref([])
 
